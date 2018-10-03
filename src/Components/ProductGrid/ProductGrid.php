@@ -9,6 +9,10 @@ class ProductGrid extends \MageSuite\ContentConstructor\AbstractComponent implem
      * biggest scenario (4 rows) can be filled with products
      */
     const DEFAULT_PRODUCTS_LIMIT = 24;
+    /**
+     * @var \MageSuite\ContentConstructor\Service\ProductTileRenderer
+     */
+    protected $productTileRenderer;
 
     /**
      * @var \MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider
@@ -28,7 +32,8 @@ class ProductGrid extends \MageSuite\ContentConstructor\AbstractComponent implem
         \MageSuite\ContentConstructor\View\TemplateLocator $locator,
         \MageSuite\ContentConstructor\Components\ProductCarousel\DataProvider $dataProvider,
         \MageSuite\ContentConstructor\Service\MediaResolver $mediaResolver,
-        \MageSuite\ContentConstructor\Service\UrlResolver $urlResolver
+        \MageSuite\ContentConstructor\Service\UrlResolver $urlResolver,
+        \MageSuite\ContentConstructor\Service\ProductTileRenderer $productTileRenderer
     )
     {
         parent::__construct($template, $locator);
@@ -36,6 +41,7 @@ class ProductGrid extends \MageSuite\ContentConstructor\AbstractComponent implem
         $this->dataProvider = $dataProvider;
         $this->mediaResolver = $mediaResolver;
         $this->urlResolver = $urlResolver;
+        $this->productTileRenderer = $productTileRenderer;
     }
 
     /**
@@ -47,12 +53,11 @@ class ProductGrid extends \MageSuite\ContentConstructor\AbstractComponent implem
     {
         $configuration['limit'] = (isset($configuration['limit']) and is_numeric($configuration['limit'])) ? (int)$configuration['limit'] : self::DEFAULT_PRODUCTS_LIMIT;
 
-        $products = $this->dataProvider->getProducts($configuration);
+        $products = $this->dataProvider->getProducts($configuration, true);
 
-        $identities = array_column($products, 'identities');
-        $this->setIdentities($identities);
+        $this->setIdentities($this->getProductsIdentities($products));
 
-        $configuration['products'] = $products;
+        $configuration['products'] = $this->getRenderedProductTiles($products);
 
         if(isset($configuration['hero']['href']) and !empty($configuration['hero']['href'])) {
             $configuration['hero']['href'] = $this->urlResolver->resolve($configuration['hero']['href']);
@@ -74,5 +79,35 @@ class ProductGrid extends \MageSuite\ContentConstructor\AbstractComponent implem
     protected function getDefaultTemplatePath()
     {
         return 'products-grid/products-grid.twig';
+    }
+
+    protected function getRenderedProductTiles($products) {
+        $renderedProducts = [];
+        $iterator = 1;
+
+        /** @var \Magento\Catalog\Model\Product $product */
+        foreach($products as $product) {
+            $renderedProducts[] = $this->productTileRenderer->render($product, $iterator);
+
+            $iterator++;
+        }
+
+        return $renderedProducts;
+    }
+
+    /**
+     * @param $products
+     * @return array
+     */
+    protected function getProductsIdentities($products)
+    {
+        $identities = [];
+
+        /** @var \Magento\Catalog\Model\Product $product */
+        foreach ($products as $product) {
+            $identities = array_merge($identities, $product->getIdentities());
+        }
+
+        return $identities;
     }
 }
