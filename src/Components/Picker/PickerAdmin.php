@@ -18,7 +18,8 @@ class PickerAdmin extends \MageSuite\ContentConstructor\AbstractAdminComponent
         ['type' => "product-grid", 'name' => "Products grid", 'description' => "This component will display products grid from a specific category."],
         ['type' => "custom-html", 'name' => "Custom HTML", 'description' => "This component displays any custom HTML without formatting."],
         ['type' => "cms-teaser", 'name' => "CMS Pages Teaser", 'description' => "This component lists CMS pages by tag."],
-        ['type' => "product-finder", 'name' => "Product Finder", 'description' => "Product Finder."]
+        ['type' => "product-finder", 'name' => "Product Finder", 'description' => "Product Finder."],
+        ['type' => "daily-deal-teaser", 'name' => "Daily Deal Teaser", 'description' => "Daily Deal Teaser."]
     ];
 
     /**
