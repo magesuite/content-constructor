@@ -25,7 +25,7 @@ class ImageTeaserAdmin extends \MageSuite\ContentConstructor\AbstractAdminCompon
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-image-teaser-configurator/src/m2c-image-teaser-configurator.twig'),
+            $this->locator->locate('image-teaser/configurator/image-teaser.twig'),
             [
                 'configuration' => $this->getComponentConfiguration(),
             ]

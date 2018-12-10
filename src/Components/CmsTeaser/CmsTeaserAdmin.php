@@ -32,7 +32,7 @@ class CmsTeaserAdmin extends \MageSuite\ContentConstructor\AbstractAdminComponen
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-cms-pages-teaser-configurator/src/m2c-cms-pages-teaser-configurator.twig'),
+            $this->locator->locate('cms-pages-teaser/configurator/cms-pages-teaser.twig'),
             [
                 'configuration' => $this->getComponentConfiguration(),
                 'cmsTags' => json_encode($this->cmsTeaserAdminDataProvider->getTags())

@@ -25,7 +25,7 @@ class HeadlineAdmin extends \MageSuite\ContentConstructor\AbstractAdminComponent
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-headline-configurator/src/m2c-headline-configurator.twig'),
+            $this->locator->locate('headline/configurator/headline.twig'),
             ['configuration' => $this->getComponentConfiguration()]
         );
     }

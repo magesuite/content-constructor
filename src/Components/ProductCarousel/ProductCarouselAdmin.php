@@ -32,7 +32,7 @@ class ProductCarouselAdmin extends \MageSuite\ContentConstructor\AbstractAdminCo
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-product-carousel-configurator/src/m2c-product-carousel-configurator.twig'),
+            $this->locator->locate('product-carousel/configurator/product-carousel.twig'),
             [
                 'category_picker' => $this->categoryPickerProvider->renderPicker(),
                 'configuration' => $this->getComponentConfiguration()

@@ -26,7 +26,7 @@ class DailyDealTeaserAdmin extends \MageSuite\ContentConstructor\AbstractAdminCo
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-daily-deal-teaser-configurator/src/m2c-daily-deal-teaser-configurator.twig'),
+            $this->locator->locate('daily-deal-teaser/configurator/daily-deal-teaser.twig'),
             [
                 'configuration' => $this->getComponentConfiguration()
             ]

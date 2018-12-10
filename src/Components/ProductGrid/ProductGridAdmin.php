@@ -25,7 +25,7 @@ class ProductGridAdmin extends \MageSuite\ContentConstructor\AbstractAdminCompon
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-products-grid-configurator/src/m2c-products-grid-configurator.twig'),
+            $this->locator->locate('products-grid/configurator/products-grid.twig'),
             [
                 'configuration' => $this->getComponentConfiguration()
             ]

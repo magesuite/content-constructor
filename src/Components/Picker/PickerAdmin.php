@@ -63,7 +63,7 @@ class PickerAdmin extends \MageSuite\ContentConstructor\AbstractAdminComponent
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('components/cc-component-picker/src/cc-component-picker.twig'),
+            $this->locator->locate('_component-picker/component-picker.twig'),
             [
                 'configuration' => $this->getComponentConfiguration(),
                 'components' => json_encode($this->getSupportedComponents())

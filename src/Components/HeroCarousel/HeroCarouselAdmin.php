@@ -26,7 +26,7 @@ class HeroCarouselAdmin extends \MageSuite\ContentConstructor\AbstractAdminCompo
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-hero-carousel-configurator/src/m2c-hero-carousel-configurator.twig'),
+            $this->locator->locate('hero-carousel/configurator/hero-carousel.twig'),
             [
                 'configuration' => $this->getComponentConfiguration()
             ]
