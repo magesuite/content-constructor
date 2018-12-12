@@ -4,7 +4,7 @@
     "homepage": "https://creativestyle.de",
     "license": "OSL-3.0",
     "require": {
-        "twig/twig": "1.33"
+        "twig/twig": "*"
     },
     "autoload": {
         "psr-4": {
