@@ -25,7 +25,7 @@ class ButtonAdmin extends \MageSuite\ContentConstructor\AbstractAdminComponent
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-button-configurator/src/m2c-button-configurator.twig'),
+            $this->locator->locate('button/configurator/button.twig'),
             [
                 'configuration' => $this->getComponentConfiguration(),
             ]

@@ -33,7 +33,7 @@ class ParagraphAdmin extends \MageSuite\ContentConstructor\AbstractAdminComponen
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-paragraph-configurator/src/m2c-paragraph-configurator.twig'),
+            $this->locator->locate('paragraph/configurator/paragraph.twig'),
             [
                 'configuration' => $this->getComponentConfiguration(),
                 'wysiwyg_configuration' => $this->wysiwygConfigDataProvider->getConfig()

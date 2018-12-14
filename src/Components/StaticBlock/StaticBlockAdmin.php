@@ -31,7 +31,7 @@ class StaticBlockAdmin extends \MageSuite\ContentConstructor\AbstractAdminCompon
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-static-block-configurator/src/m2c-static-block-configurator.twig'),
+            $this->locator->locate('static-block/configurator/static-block.twig'),
             [
                 'configuration' => $this->getComponentConfiguration(),
                 'blocks' => $this->dataProvider->getBlocks()

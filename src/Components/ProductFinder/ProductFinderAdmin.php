@@ -25,7 +25,7 @@ class ProductFinderAdmin extends \MageSuite\ContentConstructor\AbstractAdminComp
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-product-finder-configurator/src/m2c-product-finder-configurator.twig'),
+            $this->locator->locate('product-finder/configurator/product-finder.twig'),
             ['configuration' => $this->getComponentConfiguration()]
         );
     }

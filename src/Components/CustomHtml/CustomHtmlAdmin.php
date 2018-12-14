@@ -25,7 +25,7 @@ class CustomHtmlAdmin extends \MageSuite\ContentConstructor\AbstractAdminCompone
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-custom-html-configurator/src/m2c-custom-html-configurator.twig'),
+            $this->locator->locate('custom-html/configurator/custom-html.twig'),
             ['configuration' => $this->getComponentConfiguration()]
         );
     }

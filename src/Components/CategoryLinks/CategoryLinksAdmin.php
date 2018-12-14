@@ -25,7 +25,7 @@ class CategoryLinksAdmin extends \MageSuite\ContentConstructor\AbstractAdminComp
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-category-links-configurator/src/m2c-category-links-configurator.twig'),
+            $this->locator->locate('category-links/configurator/category-links.twig'),
             ['configuration' => $this->getComponentConfiguration()]
         );
     }

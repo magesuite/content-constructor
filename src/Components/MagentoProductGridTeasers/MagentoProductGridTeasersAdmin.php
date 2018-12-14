@@ -25,7 +25,7 @@ class MagentoProductGridTeasersAdmin extends \MageSuite\ContentConstructor\Abstr
     public function renderConfigurator()
     {
         return $this->template->render(
-            $this->locator->locate('customizations/m2c-magento-product-grid-teasers-configurator/src/m2c-magento-product-grid-teasers-configurator.twig'),
+            $this->locator->locate('magento-product-grid-teasers/configurator/magento-product-grid-teasers.twig'),
             [
                 'configuration' => $this->getComponentConfiguration(),
             ]
