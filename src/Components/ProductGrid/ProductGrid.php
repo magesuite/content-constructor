@@ -83,13 +83,10 @@ class ProductGrid extends \MageSuite\ContentConstructor\AbstractComponent implem
 
     protected function getRenderedProductTiles($products) {
         $renderedProducts = [];
-        $iterator = 1;
 
         /** @var \Magento\Catalog\Model\Product $product */
         foreach($products as $product) {
-            $renderedProducts[] = $this->productTileRenderer->render($product, $iterator);
-
-            $iterator++;
+            $renderedProducts[] = $this->productTileRenderer->render($product, null);
         }
 
         return $renderedProducts;
