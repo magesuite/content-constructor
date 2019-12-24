@@ -3,9 +3,6 @@
     "description": "Content Constructor",
     "homepage": "https://creativestyle.de",
     "license": "OSL-3.0",
-    "require": {
-        "twig/twig": "*"
-    },
     "autoload": {
         "psr-4": {
             "MageSuite\\ContentConstructor\\": "src/",
