@@ -23,7 +23,7 @@ class ComponentManagerTest extends \PHPUnit\Framework\TestCase
      */
     private $adminComponentStub;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->adminComponentFactoryStub = $this
             ->getMockBuilder(\MageSuite\ContentConstructor\Factory\AdminComponentFactory::class)->getMock();
         $this->componentConfigurationRepositoryStub = $this

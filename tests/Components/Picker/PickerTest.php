@@ -25,7 +25,7 @@ class PickerAdminTest extends \PHPUnit\Framework\TestCase
     private $pickerAdmin;
 
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->templateStub = $this->getMockBuilder(\MageSuite\ContentConstructor\View\Template::class)->getMock();
         $this->locatorStub = $this->getMockBuilder(\MageSuite\ContentConstructor\View\AdminTemplateLocator::class)->getMock();

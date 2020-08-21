@@ -30,7 +30,7 @@ class StaticBlockTest extends \PHPUnit\Framework\TestCase
     private $staticBlock;
 
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->templateMock = $this->getMockBuilder(\MageSuite\ContentConstructor\View\Template::class)->getMock();
         $this->locatorMock = $this->getMockBuilder(\MageSuite\ContentConstructor\View\AdminTemplateLocator::class)->getMock();

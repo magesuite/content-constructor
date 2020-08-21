@@ -10,7 +10,7 @@ class AbstractAdminComponentTest extends \PHPUnit\Framework\TestCase
      */
     private $abstractAdminComponent;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->abstractAdminComponent = $this->getMockForAbstractClass(\MageSuite\ContentConstructor\AbstractAdminComponent::class);
     }
