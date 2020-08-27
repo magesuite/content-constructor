@@ -20,7 +20,7 @@ class HeroCarouselAdminTest extends \PHPUnit\Framework\TestCase
     private $headline;
 
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->templateStub = $this->getMockBuilder(\MageSuite\ContentConstructor\View\Template::class)->getMock();
         $this->locatorStub = $this->getMockBuilder(\MageSuite\ContentConstructor\View\AdminTemplateLocator::class)->getMock();

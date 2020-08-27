@@ -9,7 +9,7 @@ class AbstractComponentTest extends \PHPUnit\Framework\TestCase
      */
     private $abstractComponent;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->abstractComponent = $this
             ->getMockBuilder(\MageSuite\ContentConstructor\AbstractComponent::class)
             ->disableOriginalConstructor()
