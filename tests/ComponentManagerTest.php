@@ -48,12 +48,9 @@ class ComponentManagerTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testItThrowsExceptionWhenComponentDoesNotExists() {
         $this->adminComponentFactoryStub->method('create')->willReturn(null);
-
+        $this->expectException(\InvalidArgumentException::class);
         $this->manager->initializeComponent('not_existing_component');
     }
 }
