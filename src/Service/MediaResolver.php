@@ -19,6 +19,13 @@ interface MediaResolver
     public function resolveSrcSet($mediaPath);
 
     /**
+     * Returns srcset as key value array
+     * @param $array
+     * @return mixed
+     */
+    public function resolveSrcSetArray($array);
+
+    /**
      * Returns images paths from strings in array
      * @param $array
      * @return mixed
