@@ -42,6 +42,6 @@ class ProductCarouselAdmin extends \MageSuite\ContentConstructor\AbstractAdminCo
 
     public function renderPreview()
     {
-        
+
     }
 }

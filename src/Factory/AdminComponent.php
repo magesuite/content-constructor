@@ -22,6 +22,6 @@ interface AdminComponent
      * @return string
      */
     public function renderConfigurator();
-    
+
     public function renderPreview();
 }

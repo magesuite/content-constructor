@@ -34,6 +34,6 @@ class ProductGridAdmin extends \MageSuite\ContentConstructor\AbstractAdminCompon
 
     public function renderPreview()
     {
-        
+
     }
 }
