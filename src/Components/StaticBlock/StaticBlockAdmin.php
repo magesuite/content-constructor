@@ -41,6 +41,6 @@ class StaticBlockAdmin extends \MageSuite\ContentConstructor\AbstractAdminCompon
 
     public function renderPreview()
     {
-        
+
     }
 }
